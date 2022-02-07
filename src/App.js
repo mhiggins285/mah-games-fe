@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import { CurrentUserContext } from './contexts/CurrentUserContext'
+
 import './App.css';
 
+import Header from './components/re-used/Header'
+import NavBar from './components/re-used/NavBar'
+import HomePage from './components/HomePage'
+import LogInPage from './components/LogInPage'
+import ReviewPage from './components/ReviewPage'
+
 function App() {
+
+  const [currentUser, setCurrentUser] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <CurrentUserContext.Provider value={ { currentUser, setCurrentUser } }>
+      <div className="App">
+        <Header/>
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/log-in" element={<LogInPage/>}/>
+          <Route path="/reviews/:review_id" element={<ReviewPage/>}/>
+        </Routes>
+      </div>
+      </CurrentUserContext.Provider>
+    </BrowserRouter>
   );
 }
 
