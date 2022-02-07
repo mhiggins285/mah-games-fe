@@ -1,6 +1,6 @@
 const Header = (props) => {
 
-    return(<section>Header</section>)
+    return(<h1>MAH Games</h1>)
 
 }
 

@@ -7,7 +7,28 @@ const NavBar = (props) => {
 
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
 
-    return(<section>NavBar</section>)
+    let logInLines = <li><Link to="/log-in">Log In</Link></li>
+
+    const logOut = () => {
+
+        setCurrentUser('')
+
+    }
+
+    if (currentUser !== '') {
+
+        logInLines = <section>
+            <li><button type='button' onClick={logOut}>Log Out</button></li>
+            <li>Logged in as: {currentUser}</li>
+        </section>
+
+
+    }
+
+    return(<ul>
+        <li><Link to="/">Home</Link></li>
+        {logInLines}
+    </ul>)
 
 }
 

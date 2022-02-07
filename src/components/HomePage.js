@@ -9,7 +9,6 @@ const HomePage = (props) => {
     const [categoryFilter, setCategoryFilter] = useState('')
 
     return(<section>
-        HomePage
         <OptionBox setCategoryFilter={setCategoryFilter}/>
         <ReviewList categoryFilter={categoryFilter}/>        
     </section>)

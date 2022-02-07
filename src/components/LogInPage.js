@@ -8,7 +8,7 @@ const LogInPage = (props) => {
 
     const [errorDetails, setErrorDetails] = useState({})
 
-    return(<section>LogInPage
+    return(<section>
         <LogInForm setErrorDetails={setErrorDetails}/>
         <RegisterForm setErrorDetails={setErrorDetails}/>
         <ErrorMessage errorDetails={errorDetails}/>

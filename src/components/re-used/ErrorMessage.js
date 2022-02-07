@@ -1,6 +1,14 @@
 const ErrorMessage = ({errorDetails}) => {
 
-    return(<section>ErrorMessage</section>)
+    if (errorDetails.message) {
+
+        return(<section>{errorDetails.message}</section>)
+
+    } else {
+
+        return ('')
+
+    }
 
 }
 
