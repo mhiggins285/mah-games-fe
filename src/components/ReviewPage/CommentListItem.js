@@ -61,7 +61,7 @@ const CommentListItem = ({ comment, setCommentsArray, setCommentChange }) => {
 
     return(<section>Comment
         <p>{author}</p>
-        <img src={authorAvatar}/>
+        <img alt={`${author}'s avatar`} src={authorAvatar}/>
         <p>{body}</p>
         <p>{created_at}</p>
         <p>{votes} votes</p>

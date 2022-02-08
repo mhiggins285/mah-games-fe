@@ -36,8 +36,8 @@ const ReviewDetails = ({review_id, commentChange}) => {
     return(<section>Review
         <h2>{title}</h2>
         <p>{owner}</p>
-        <img src={ownerAvatar}/>
-        <img src={review_img_url}/>
+        <img alt={`${owner}'s avatar`} src={ownerAvatar}/>
+        <img alt={`${title} - review image`} src={review_img_url}/>
         <p>{review_body}</p>
         <p>{category}</p>
         <p>{designer}</p>
