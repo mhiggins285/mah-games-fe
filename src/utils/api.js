@@ -20,10 +20,51 @@ export const getReviewsByCategory = (category = '') => {
 
 }
 
+export const getReview = (review_id) => {
+
+    return mahGamesAPI.get(`/reviews/${review_id}`)
+        .then((res) => {
+
+            return res.data.review
+            
+        })
+
+}
+
+export const patchReviewVotes = (review_id, inc_votes) => {
+
+    const patchObject = { inc_votes }
+
+    return mahGamesAPI.patch(`/reviews/${review_id}/votes`, patchObject)
+
+}
 
 /*** Comments */
 
+export const postComment = (review_id, user, body) => {
 
+    const commentObject = { user,  body }
+
+    return mahGamesAPI.post(`/reviews/${review_id}/comments`, commentObject)
+                    .then((res) => {
+                        return(res.data.comment)
+                    })
+
+}
+
+export const getCommentsByReview = (review_id) => {
+
+    return mahGamesAPI.get(`reviews/${review_id}/comments`)
+            .then((res) => {return res.data.comments})
+            .catch((err) => {throw(err)})
+
+}
+
+export const deleteComment = (comment_id) => {
+
+    return mahGamesAPI.delete(`comments/${comment_id}`)
+
+}
 
 
 /*** Categories */
@@ -50,7 +91,7 @@ export const getUsernames = () => {
 
 export const postUser = (username, name, avatar_url) => {
 
-    const userBody = {
+    const userObject = {
 
         username: username,
         name: name,
@@ -58,6 +99,15 @@ export const postUser = (username, name, avatar_url) => {
 
     }
 
-    return mahGamesAPI.post('/users', userBody)
+    return mahGamesAPI.post('/users', userObject)
+
+}
+
+export const getUserAvatar = (username) => {
+
+    return mahGamesAPI.get(`/users/${username}`)
+                .then((res) => {
+                    return res.data.user.avatar_url
+                })
 
 }

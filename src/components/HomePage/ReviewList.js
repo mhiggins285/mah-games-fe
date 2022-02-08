@@ -19,7 +19,7 @@ const ReviewList = ({categoryFilter}) => {
 
     }, [categoryFilter])
 
-    return(<section>ReviewList
+    return(<section>Review List
         {reviewArray.map((review) => {
             return (<ReviewListItem key={review.review_id} review={review}/>)
         })}

@@ -5,7 +5,7 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
 const NavBar = (props) => {
 
-    const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+    const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
 
     let logInLines = <li><Link to="/log-in">Log In</Link></li>
 
@@ -15,7 +15,7 @@ const NavBar = (props) => {
 
     }
 
-    if (currentUser !== '') {
+    if (currentUser !== '' && currentUser !== undefined) {
 
         logInLines = <section>
             <li><button type='button' onClick={logOut}>Log Out</button></li>

@@ -1,9 +1,26 @@
-import CommentListItem from "./CommentListItem"
+import { useEffect } from 'react'
 
-const CommentList = ({comments, setComments}) => {
+import { getCommentsByReview } from '../../utils/api'
 
-    return(<section>CommentList
-        <CommentListItem/>
+import CommentListItem from './CommentListItem'
+
+const CommentList = ({commentsArray, setCommentsArray, review_id, setCommentChange}) => {
+
+    useEffect(() => {
+
+        getCommentsByReview(review_id)
+            .then((comments) => {
+
+                setCommentsArray(comments)
+
+            })
+
+    }, [review_id])
+
+    return(<section>Comment List
+        {commentsArray.map((comment) => {
+            return (<CommentListItem key={comment.comment_id} comment={comment} setCommentsArray={setCommentsArray} setCommentChange={setCommentChange}/>)
+        })}
     </section>)
 
 }
