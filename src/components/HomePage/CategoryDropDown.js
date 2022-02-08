@@ -43,7 +43,7 @@ const CategoryDropDown = ({setCategoryFilter}) => {
     return (
         <label>Category
           <select onChange={categoryChangeHandler}>
-            <option defaultValue value=''>No Filter</option>
+            <option defaultValue value={undefined}>No Filter</option>
             {categories.map((category) => <option key={category} value={category}>{formatCategoryName(category)}</option>)}
           </select>
         </label>

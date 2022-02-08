@@ -1,8 +1,10 @@
 import { useState } from 'react'
 
-import CategoryDropDown from "./CategoryDropDown"
+import CategoryDropDown from './CategoryDropDown'
+import SortByDropDown from './SortByDropDown'
+import OrderDropDown from './OrderDropDown'
 
-const OptionBox = ({setCategoryFilter}) => {
+const OptionBox = ({setCategoryFilter, setSortByQuery, setOrderQuery}) => {
 
     const [hiddenOptions, setHiddenOptions] = useState(true)
 
@@ -18,6 +20,8 @@ const OptionBox = ({setCategoryFilter}) => {
         <legend>Options</legend>
         <section hidden={hiddenOptions}>
             <CategoryDropDown setCategoryFilter={setCategoryFilter}/>
+            <SortByDropDown setSortByQuery={setSortByQuery}/>
+            <OrderDropDown setOrderQuery={setOrderQuery}/>
         </section>
         <button onClick={hideShowOptions}>{hiddenOptions ? 'Show' : 'Hide'}</button>
     </fieldset>)

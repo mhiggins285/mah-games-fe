@@ -4,13 +4,13 @@ const mahGamesAPI = axios.create({baseURL:'https://mah-games.herokuapp.com/api'}
 
 /*** Reviews */
 
-export const getReviewsByCategory = (category = '') => {
+export const getReviewsByCategory = (category, sortByQuery = 'created_at', orderQuery = 'desc') => {
 
-    let endpoint = '/reviews'
+    let endpoint = `/reviews?sort_by=${sortByQuery}&order=${orderQuery}`
 
-    if (category !== '') {
+    if (category) {
 
-        endpoint += `?category=${category}`
+        endpoint += `&category=${category}`
 
     }
 

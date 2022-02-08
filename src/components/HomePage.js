@@ -5,11 +5,13 @@ import ReviewList from './HomePage/ReviewList'
 
 const HomePage = (props) => {
 
-    const [categoryFilter, setCategoryFilter] = useState('')
+    const [categoryFilter, setCategoryFilter] = useState()
+    const [sortByQuery, setSortByQuery] = useState()
+    const [orderQuery, setOrderQuery] = useState()
 
     return(<section>
-        <OptionBox setCategoryFilter={setCategoryFilter}/>
-        <ReviewList categoryFilter={categoryFilter}/>        
+        <OptionBox setCategoryFilter={setCategoryFilter} setSortByQuery={setSortByQuery} setOrderQuery={setOrderQuery}/>
+        <ReviewList categoryFilter={categoryFilter} sortByQuery={sortByQuery} orderQuery={orderQuery}/>        
     </section>)
 
 }

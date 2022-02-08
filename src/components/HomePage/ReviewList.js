@@ -4,20 +4,20 @@ import { getReviewsByCategory } from '../../utils/api'
 
 import ReviewListItem from "./ReviewListItem"
 
-const ReviewList = ({categoryFilter}) => {
+const ReviewList = ({categoryFilter, sortByQuery, orderQuery}) => {
 
     const [reviewArray, setReviewArray] = useState([])
 
     useEffect(() => {
 
-        getReviewsByCategory(categoryFilter)
+        getReviewsByCategory(categoryFilter, sortByQuery, orderQuery)
             .then((reviews) => {
 
                 setReviewArray(reviews)
 
             })
 
-    }, [categoryFilter])
+    }, [categoryFilter, sortByQuery, orderQuery])
 
     return(<section>Review List
         {reviewArray.map((review) => {

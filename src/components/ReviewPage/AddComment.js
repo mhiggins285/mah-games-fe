@@ -53,14 +53,12 @@ const AddComment = ({setCommentsArray, setErrorDetails, review_id, setCommentCha
 
     }
     
-    const isUserLoggedIn = currentUser !== '' && currentUser !== undefined
-
     return (<section>
         <h3>Post Comment</h3>
         <form onSubmit={(event) => handlePostComment(event)}>
             <label>Comment Body
-            <input type='text' value={commentBody} disabled={!isUserLoggedIn} placeholder={isUserLoggedIn ? 'Write comment...' : 'Please log in to post comment'} onChange={handleCommentChange}/></label>
-            <input disabled={!isUserLoggedIn} type='submit'/>
+            <input type='text' value={commentBody} disabled={!currentUser} placeholder={!!currentUser ? 'Write comment...' : 'Please log in to post comment'} onChange={handleCommentChange}/></label>
+            <input disabled={!currentUser} type='submit'/>
         </form>
     </section>)
 

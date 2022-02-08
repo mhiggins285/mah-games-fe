@@ -10,6 +10,7 @@ import NavBar from './components/re-used/NavBar'
 import HomePage from './components/HomePage'
 import LogInPage from './components/LogInPage'
 import ReviewPage from './components/ReviewPage'
+import ErrorPage from './components/ErrorPage'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/log-in" element={<LogInPage/>}/>
           <Route path="/reviews/:review_id" element={<ReviewPage/>}/>
+          <Route path='*' element={<ErrorPage/>}/>
         </Routes>
       </div>
       </CurrentUserContext.Provider>

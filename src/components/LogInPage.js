@@ -12,7 +12,7 @@ const LogInPage = (props) => {
 
     const [errorDetails, setErrorDetails] = useState({})
 
-    if (currentUser !== '' && currentUser !== undefined) {
+    if (currentUser) {
 
         return (<h3>You are currently logged in. If you would like to log in as another user, please first log out.</h3>)
 
