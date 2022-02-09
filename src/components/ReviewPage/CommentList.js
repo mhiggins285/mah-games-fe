@@ -17,9 +17,10 @@ const CommentList = ({commentsArray, setCommentsArray, review_id, setCommentChan
 
     }, [review_id])
 
-    return(<section>Comment List
-        {commentsArray.map((comment) => {
-            return (<CommentListItem key={comment.comment_id} comment={comment} setCommentsArray={setCommentsArray} setCommentChange={setCommentChange}/>)
+    return(<section>
+        <h2>Comments</h2>
+        {commentsArray.map((comment, index) => {
+            return (<CommentListItem key={comment.comment_id} comment={comment} setCommentsArray={setCommentsArray} setCommentChange={setCommentChange} borderColour={index % 4}/>)
         })}
     </section>)
 

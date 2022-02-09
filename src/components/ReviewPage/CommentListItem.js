@@ -2,9 +2,11 @@ import { useState, useContext, useEffect } from 'react'
 
 import { deleteComment, getUserAvatar } from '../../utils/api'
 
+import { formatDate } from '../../utils/format'
+
 import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
-const CommentListItem = ({ comment, setCommentsArray, setCommentChange }) => {
+const CommentListItem = ({ comment, setCommentsArray, setCommentChange, borderColour }) => {
 
     const { currentUser } = useContext(CurrentUserContext);
 
@@ -51,6 +53,25 @@ const CommentListItem = ({ comment, setCommentsArray, setCommentChange }) => {
 
     }, [])
 
+    let borderStyle = ''
+
+    switch (borderColour) {
+
+        case 0:
+            borderStyle = 'green-border'
+            break
+        case 1:
+            borderStyle = 'red-border'
+            break
+        case 2:
+            borderStyle = 'yellow-border'
+            break
+        case 3:
+            borderStyle = 'blue-border'
+            break
+
+    }
+
     let deleteButton = ''
 
     if (currentUser === author) {
@@ -59,12 +80,15 @@ const CommentListItem = ({ comment, setCommentsArray, setCommentChange }) => {
 
     }
 
-    return(<section>Comment
-        <p>{author}</p>
-        <img alt={`${author}'s avatar`} src={authorAvatar}/>
-        <p>{body}</p>
-        <p>{created_at}</p>
-        <p>{votes} votes</p>
+    return(<section className={`review-comment ${borderStyle}`}>
+        <section className={`comment-author ${borderStyle}`}>
+            <img alt={`${author}'s avatar`} src={authorAvatar}/>
+            <p>{author}</p>
+        </section>
+        <p className='comment-body'>{body}</p>
+        <p className='comment-timestamp'>{}</p>
+        <p className='comment-votes'>{votes} votes</p>
+        {formatDate(created_at)}
         {deleteButton}
     </section>)
 

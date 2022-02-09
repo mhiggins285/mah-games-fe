@@ -53,12 +53,11 @@ const AddComment = ({setCommentsArray, setErrorDetails, review_id, setCommentCha
 
     }
     
-    return (<section>
+    return (<section className='add-comment-section'>
         <h3>Post Comment</h3>
-        <form onSubmit={(event) => handlePostComment(event)}>
-            <label>Comment Body
-            <input type='text' value={commentBody} disabled={!currentUser} placeholder={!!currentUser ? 'Write comment...' : 'Please log in to post comment'} onChange={handleCommentChange}/></label>
-            <input disabled={!currentUser} type='submit'/>
+        <form className={currentUser ? 'add-comment--enabled' : 'add-comment--disabled'} onSubmit={(event) => handlePostComment(event)}>
+            <textarea cols='50' type='text' value={commentBody} disabled={!currentUser} placeholder={currentUser ? 'Write comment...' : 'Please log in to post comment'} onChange={handleCommentChange}/>
+            <button disabled={!currentUser}>Submit</button>
         </form>
     </section>)
 

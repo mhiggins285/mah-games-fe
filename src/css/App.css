@@ -46,7 +46,23 @@
 
 } */
 
-[hidden] { display: none !important; }
+[hidden] { 
+  
+  display: none !important; 
+
+}
+
+.bold {
+
+  font-weight: bold;
+
+}
+
+.italics {
+
+  font-style: italic;
+
+}
 
 section {
 

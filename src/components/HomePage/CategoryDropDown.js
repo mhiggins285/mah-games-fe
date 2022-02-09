@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 
 import { getCategories } from '../../utils/api'
 
+import { formatCategoryName } from '../../utils/format'
+
 const CategoryDropDown = ({setCategoryFilter}) => {
 
     const [categories, setCategories] = useState([])
@@ -9,19 +11,6 @@ const CategoryDropDown = ({setCategoryFilter}) => {
     const categoryChangeHandler = function(event) {
 
         setCategoryFilter(event.target.value)
-
-    }
-
-    const formatCategoryName = (dashedCategoryName) => {
-
-        const categoryWords = dashedCategoryName.split('-')
-        const capitalisedCategoryWords = categoryWords.map((word) => {
-
-            return (word[0].toUpperCase() + word.substring(1, word.length))
-
-        })
-        const formattedCategoryName = capitalisedCategoryWords.join(' ')
-        return formattedCategoryName
 
     }
 

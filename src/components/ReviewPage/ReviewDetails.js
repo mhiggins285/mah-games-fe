@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react'
 
+import { useNavigate } from 'react-router-dom'
+
 import { getReview, getUserAvatar } from '../../utils/api'
 
 import ReviewVoteButtons from "./ReviewVoteButtons"
 
+import '../../css/ReviewPage.css'
+
 const ReviewDetails = ({review_id, commentChange}) => {
+
+    const navigate = useNavigate()
 
     const [review, setReview] = useState({})
     const [voteChange, setVoteChange] = useState(0)
@@ -28,12 +34,18 @@ const ReviewDetails = ({review_id, commentChange}) => {
                 }
 
             })
+            .catch((err) => {
+
+                navigate('/404error')
+
+            })
+            
 
     }, [review_id])
 
     const { title, owner, review_img_url, category, created_at, votes, comment_count, designer, review_body } = review
 
-    return(<section>Review
+    return(<section className='review-body blue-border'>
         <h2>{title}</h2>
         <p>{owner}</p>
         <img alt={`${owner}'s avatar`} src={ownerAvatar}/>

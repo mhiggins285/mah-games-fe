@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 import { getUserAvatar } from '../../utils/api'
 
+import { formatDate, formatCategoryName } from '../../utils/format'
+
 import '../../css/HomePage.css'
 
 const ReviewListItem = ({review, borderColour}) => {
@@ -62,11 +64,11 @@ const ReviewListItem = ({review, borderColour}) => {
                 <p>{owner}</p>
                 <img alt={`${ownerAvatar}'s avatar`} src={ownerAvatar}/>
             </section>
-            <p className='review-details'>{category}</p>
+            <p className='review-details review-category'>{formatCategoryName(category)}</p>
             <p className='review-details'>{votes} votes</p>
             <p className='review-details'>{comment_count} comments</p>
         </section>
-        <p className='review-timestamp'>{(new Date(created_at)).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} - {(new Date(created_at)).toLocaleDateString()}</p>
+        {formatDate(created_at)}
     </li>)
 
 }

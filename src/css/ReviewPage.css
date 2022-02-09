@@ -1,0 +1,136 @@
+.review-body {
+
+    background: linear-gradient(var(--box-grey), var(--box-hover));
+    box-shadow: 8px 8px 20px var(--shadow-grey);
+    border-radius: 12px;
+    margin: 30px 30px 60px 30px;
+  
+}
+
+.review-body > img {
+
+    max-width: 100%;
+
+}
+
+.review-comment {
+
+    background: linear-gradient(var(--box-grey), var(--box-hover));
+    box-shadow: 8px 8px 20px var(--shadow-grey);
+    border-radius: 12px;
+    margin: 30px 30px 60px 30px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: fit-content fit-content fit-content;
+    grid-template-areas: 
+    'author timestamp'
+    'body body'
+    'votes votes';
+
+}
+
+.comment-author {
+
+    grid-area: author;
+    margin: 0;
+    background-color: var(--hightlight-grey);
+    height: 50px;
+    position: relative;
+    border-radius: 30px;
+    margin: 10px;
+    font-size: 16px;
+    border-width: 2px;
+
+}
+
+
+
+.comment-author > img {
+
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: absolute;
+    left: 0%;
+
+}
+
+.comment-author > p {
+
+    border-radius: 30px;
+    height: 60px;
+    top: -5px;
+    left: 60px;
+    position: absolute;
+    
+}
+
+.comment-timestamp {
+
+    grid-area: timestamp;
+
+}
+
+.comment-body {
+
+    grid-area: body;
+
+}
+
+.comment-votes {
+
+    grid-area: votes;
+
+}
+
+.add-comment--disabled, .add-comment--enabled {
+
+    border: 1px solid var(--header-grey);
+    padding: 8px;
+    width: 100%;
+    border-radius: 10px;
+    display: inline-block;
+
+}
+
+.add-comment--disabled > textarea, .add-comment--enabled > textarea {
+
+    border: 0;
+    width: 99%;
+    height: 5em;
+    vertical-align: text-top;
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+    font-size: 18px;
+
+}
+
+.add-comment--disabled > button, .add-comment--enabled > button {
+
+    padding: 5px 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 10px;
+    display: flex;
+}
+
+.add-comment--disabled {
+
+    background-color: #f0eef1;
+
+}
+
+.add-comment--enabled {
+
+    background-color: #ffffff;
+
+}
+
+.add-comment-section {
+
+    padding:30px;
+
+}

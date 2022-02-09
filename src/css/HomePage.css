@@ -141,6 +141,17 @@
 
 }
 
+.review-category {
+
+    border: 1px solid var(--border-grey);
+    width: fit-content;
+    margin: auto auto;
+    margin-top: 15px;
+    padding: 3px 5px;
+    border-radius: 5px;
+
+}
+
 @media only screen and (max-width: 550px) {
     
     .review-box {
