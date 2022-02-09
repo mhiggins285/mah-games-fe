@@ -2,7 +2,7 @@ const ErrorMessage = ({errorDetails}) => {
 
     if (errorDetails.message) {
 
-        return(<section>{errorDetails.message}</section>)
+        return(<section className='error-message'>{errorDetails.message}</section>)
 
     } else {
 

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import { CurrentUserContext } from './contexts/CurrentUserContext'
 
-import './App.css';
+import './css/App.css';
 
 import Header from './components/re-used/Header'
 import NavBar from './components/re-used/NavBar'

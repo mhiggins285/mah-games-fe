@@ -1,0 +1,16 @@
+.review-box {
+
+    background-color: var(--box-grey);
+    border: 3px solid var(--key-yellow);
+    box-shadow: 8px 8px 20px var(--shadow-grey);
+    border-radius: 12px;
+    margin: 30px 30px 60px 30px;
+
+}
+
+.review-box > h3 {
+
+    text-align: left;
+    margin: 20px 20px 20px 20px;
+
+}

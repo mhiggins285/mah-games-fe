@@ -5,6 +5,10 @@ import { getUsernames, postUser } from '../../utils/api'
 
 import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
+import '../../css/App.css'
+
+import '../../css/LogInPage.css'
+
 const RegisterForm = ({setErrorDetails}) => {
 
     const { setCurrentUser } = useContext(CurrentUserContext)
@@ -84,7 +88,7 @@ const RegisterForm = ({setErrorDetails}) => {
 
     }
 
-    return(<section>
+    return(<section className='log-in-box'>
         <h3>Register</h3>
         <form onSubmit={(event) => handleRegister(event)}>
             <label>Username
@@ -93,7 +97,7 @@ const RegisterForm = ({setErrorDetails}) => {
             <input type='text' name='name' value={registerInput.name} placeholder='Name' onChange={handleRegisterChange}/></label>
             <label>Avatar URL
             <input type='text' name='avatar_url' value={registerInput.avatar_url} placeholder='Avatar URL' onChange={handleRegisterChange}/></label>
-            <input type='submit'/>
+            <button type='submit'>Submit</button>
         </form>
     </section>)
 

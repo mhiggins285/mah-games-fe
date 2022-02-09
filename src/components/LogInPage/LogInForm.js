@@ -44,12 +44,12 @@ const LogInForm = ({setErrorDetails}) => {
 
     }
 
-    return(<section>
+    return(<section className='log-in-box'>
         <h3>Log In</h3>
         <form onSubmit={(event) => handleLogIn(event)}>
             <label>Username
             <input type='text' value={logInInput} placeholder='Username' onChange={handleLogInChange}/></label>
-            <input type='submit'/>
+            <button type='submit'>Submit</button>
         </form>
     </section>)
 

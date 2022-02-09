@@ -6,6 +6,8 @@ import LogInForm from "./LogInPage/LogInForm"
 import RegisterForm from "./LogInPage/RegisterForm"
 import ErrorMessage from "./re-used/ErrorMessage"
 
+import '../css/App.css'
+
 const LogInPage = (props) => {
 
     const { currentUser } = useContext(CurrentUserContext)
@@ -20,6 +22,7 @@ const LogInPage = (props) => {
 
     return (<section>
         <LogInForm setErrorDetails={setErrorDetails}/>
+        Not yet signed up?
         <RegisterForm setErrorDetails={setErrorDetails}/>
         <ErrorMessage errorDetails={errorDetails}/>
     </section>)

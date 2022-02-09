@@ -1,0 +1,41 @@
+.log-in-box {
+
+  background-color: var(--box-grey);
+  border: 3px solid var(--key-yellow);
+  box-shadow: 8px 8px 20px var(--shadow-grey);
+  border-radius: 12px;
+  margin: 30px 30px 60px 30px;
+
+}
+
+.log-in-box > h3 {
+
+  text-align: left;
+  margin: 20px 20px 20px 20px;
+
+}
+
+.log-in-box > form > label {
+
+  display: grid;
+  grid-template-columns: 140px auto 30px;
+  margin: 10px 0px;
+  font-size: 18px;
+
+}
+
+.log-in-box > form > label > input {
+
+  min-width: 0px;
+  padding-left: 5px;
+
+}
+
+.log-in-box > form > button {
+
+  margin: 10px 0px 15px 0px;
+  padding: 5px 10px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+
+}

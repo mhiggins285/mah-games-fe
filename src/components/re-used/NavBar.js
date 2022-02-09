@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
+import '../../css/NavBar.css'
+
 const NavBar = (props) => {
 
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
@@ -13,20 +15,21 @@ const NavBar = (props) => {
 
     }
 
-    let logInLines = <li><Link to="/log-in">Log In</Link></li>
-
     if (currentUser) {
 
-        logInLines = <section>
+        return (<ul className='nav-bar--logged-in'>
+            <div>
+            <li><Link to="/">Home</Link></li>
             <li><button type='button' onClick={logOut}>Log Out</button></li>
-            <li>Logged in as: {currentUser}</li>
-        </section>
+            </div>
+            <li>user: {currentUser}</li>
+        </ul>)
 
     }
 
-    return(<ul>
+    return (<ul className='nav-bar'>
         <li><Link to="/">Home</Link></li>
-        {logInLines}
+        <li><Link to="/log-in">Log In</Link></li>
     </ul>)
 
 }
