@@ -7,7 +7,7 @@
 .options-box > label {
 
     display: block;
-    width:fit-content;
+    width: fit-content;
     margin: 10px auto;
     background-color: #ffffff7f;
     padding: 8px;
@@ -83,6 +83,7 @@
     margin: 10px;
     font-size: 16px;
     border-width: 2px;
+    margin-top: 20px;
 
 }
 
@@ -115,7 +116,7 @@
     margin: auto;
     max-height: 240px;
     width: auto;
-    height:auto;
+    height: auto;
 
 }
 
@@ -184,7 +185,7 @@
 
     .review-owner > p {
     
-        top: 0px;
+        top: 1px;
         left: 70px;
         
     }
@@ -192,6 +193,7 @@
     .review-title {
 
         font-size: 20px;
+        margin: 10px;
 
     }
 

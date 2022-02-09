@@ -20,7 +20,7 @@ const LogInPage = (props) => {
 
     }
 
-    return (<section>
+    return (<section className='log-in-page'>
         <LogInForm setErrorDetails={setErrorDetails}/>
         Not yet signed up?
         <RegisterForm setErrorDetails={setErrorDetails}/>

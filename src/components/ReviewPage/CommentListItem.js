@@ -76,7 +76,7 @@ const CommentListItem = ({ comment, setCommentsArray, setCommentChange, borderCo
 
     if (currentUser === author) {
 
-        deleteButton = <button onClick={handleDeleteComment}>Delete Comment</button>
+        deleteButton = <button onClick={handleDeleteComment} className='delete-comment-button'>Delete Comment</button>
 
     }
 
@@ -89,7 +89,7 @@ const CommentListItem = ({ comment, setCommentsArray, setCommentChange, borderCo
         <p className='comment-timestamp'>{}</p>
         <p className='comment-votes'>{votes} votes</p>
         {formatDate(created_at)}
-        {deleteButton}
+        <div className='delete-comment-button-container'>{deleteButton}</div>
     </section>)
 
 }

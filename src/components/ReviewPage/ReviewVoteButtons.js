@@ -26,9 +26,9 @@ const ReviewVoteButtons = ({setVoteChange, review_id}) => {
         
     }
 
-    return (<section>
-        <button onClick={handleLike}>Like</button>
-        <button onClick={handleDislike}>Dislike</button>
+    return (<section className='like-dislike-button-container'>
+        <button onClick={handleLike} className='like-button'>Like</button>
+        <button onClick={handleDislike} className='dislike-button'>Dislike</button>
     </section>)
 
 }

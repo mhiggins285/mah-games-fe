@@ -9,7 +9,7 @@
   --header-grey: #b8b7ba;
   --hightlight-grey: #fff7ff;
 
-  /* --hightlight-hover: #efe7ef; */
+  --hightlight-hover: #efe7ef;
   --box-hover: #ddd7df;
   --background-hover: #cdc7cf;
 
@@ -21,6 +21,9 @@
   --key-green: #00d771;
   --key-red: #ff0018;
   --key-yellow: #e6b924;
+
+  --active-green: #a0ffe1;
+  --active-red: #ffa0b8;
 
   --error-background: rgb(238, 153, 164);
   --error-border: rgb(151, 21, 21);
@@ -100,6 +103,7 @@ button {
   width: fit-content;
   border-radius: 4px;
   box-shadow: 6px 6px 20px var(--shadow-grey);
+  margin-bottom: 25px;
 
 }
 
