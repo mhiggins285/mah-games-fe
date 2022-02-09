@@ -1,14 +1,24 @@
 import { useEffect, useState } from 'react'
 
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { getUserAvatar } from '../../utils/api'
 
-const ReviewListItem = ({review}) => {
+import '../../css/HomePage.css'
+
+const ReviewListItem = ({review, borderColour}) => {
+
+    const navigate = useNavigate()
 
     const [ownerAvatar, setOwnerAvatar] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png')
 
     const {review_id, title, owner, review_img_url, category, created_at, votes, comment_count} = review
+
+    const handleReviewClick = () => {
+
+        navigate(`/reviews/${review_id}`)
+
+    }
     
     useEffect(() => {
 
@@ -25,17 +35,39 @@ const ReviewListItem = ({review}) => {
 
     }, [review_id])
 
-    return(<section>Review
-        <h2>{title}</h2>
-        <p>{owner}</p>
-        <img alt={`${ownerAvatar}'s avatar`} src={ownerAvatar}/>
-        <img alt={`${title} - review image`} src={review_img_url}/>
-        <p>{category}</p>
-        <p>{created_at}</p>
-        <p>{votes} votes</p>
-        <p>{comment_count} comments</p>
-        <Link to={`/reviews/${review_id}`}>Read</Link>
-    </section>)
+    let borderStyle = ''
+
+    switch (borderColour) {
+
+        case 0:
+            borderStyle = 'blue-border'
+            break
+        case 1:
+            borderStyle = 'green-border'
+            break
+        case 2:
+            borderStyle = 'red-border'
+            break
+        case 3:
+            borderStyle = 'yellow-border'
+            break
+
+    }
+
+    return(<li className={`review-box ${borderStyle}`} onClick={handleReviewClick}>
+        <h2 className='review-title'>{title}</h2>
+        <img alt={`${title} - review`} src={review_img_url} className='review-image'/>
+        <section className='review-details'>
+            <section className={`review-owner ${borderStyle}`}>
+                <p>{owner}</p>
+                <img alt={`${ownerAvatar}'s avatar`} src={ownerAvatar}/>
+            </section>
+            <p className='review-details'>{category}</p>
+            <p className='review-details'>{votes} votes</p>
+            <p className='review-details'>{comment_count} comments</p>
+        </section>
+        <p className='review-timestamp'>{(new Date(created_at)).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})} - {(new Date(created_at)).toLocaleDateString()}</p>
+    </li>)
 
 }
 

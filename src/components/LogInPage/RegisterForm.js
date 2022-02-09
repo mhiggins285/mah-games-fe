@@ -88,7 +88,7 @@ const RegisterForm = ({setErrorDetails}) => {
 
     }
 
-    return(<section className='log-in-box'>
+    return(<section className='log-in-box yellow-border'>
         <h3>Register</h3>
         <form onSubmit={(event) => handleRegister(event)}>
             <label>Username

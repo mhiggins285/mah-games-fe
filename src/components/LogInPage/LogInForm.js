@@ -44,7 +44,7 @@ const LogInForm = ({setErrorDetails}) => {
 
     }
 
-    return(<section className='log-in-box'>
+    return(<section className='log-in-box green-border'>
         <h3>Log In</h3>
         <form onSubmit={(event) => handleLogIn(event)}>
             <label>Username

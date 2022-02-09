@@ -19,11 +19,11 @@ const ReviewList = ({categoryFilter, sortByQuery, orderQuery}) => {
 
     }, [categoryFilter, sortByQuery, orderQuery])
 
-    return(<section>Review List
-        {reviewArray.map((review) => {
-            return (<ReviewListItem key={review.review_id} review={review}/>)
+    return(<ul className='review-list'>
+        {reviewArray.map((review, index) => {
+            return (<ReviewListItem key={review.review_id} review={review} borderColour={index % 4}/>)
         })}
-    </section>)
+    </ul>)
 
 }
 

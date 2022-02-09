@@ -1,7 +1,6 @@
 .log-in-box {
 
-  background-color: var(--box-grey);
-  border: 3px solid var(--key-yellow);
+  background: linear-gradient(var(--box-grey), var(--box-hover));
   box-shadow: 8px 8px 20px var(--shadow-grey);
   border-radius: 12px;
   margin: 30px 30px 60px 30px;

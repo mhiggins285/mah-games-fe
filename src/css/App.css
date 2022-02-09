@@ -3,10 +3,19 @@
 :root {
 
   --background-grey: #ddd7df;
-  --box-grey: #ede7ef;
+  --box-grey: #faedf7;
   --border-grey: #8c8c8e;
   --shadow-grey: #6c6c6e;
   --header-grey: #b8b7ba;
+  --hightlight-grey: #fff7ff;
+
+  /* --hightlight-hover: #efe7ef; */
+  --box-hover: #ddd7df;
+  --background-hover: #cdc7cf;
+
+  /* --hightlight-active: #dfd7df; */
+  --box-active: #cdc7cf;
+  --background-active: #bdb7bf;
 
   --key-blue: #0b2fe5;
   --key-green: #00d771;
@@ -37,15 +46,11 @@
 
 } */
 
+[hidden] { display: none !important; }
+
 section {
 
   font-size: 20px;
-
-}
-
-img {
-
-  max-width: 100%;
 
 }
 
@@ -103,5 +108,39 @@ button {
 .yellow {
 
   color: var(--key-yellow)
+
+}
+
+.blue-border {
+
+  border: 3px solid var(--key-blue)
+
+}
+
+.green-border {
+
+  border: 3px solid var(--key-green)
+
+}
+
+.red-border {
+
+  border: 3px solid var(--key-red)
+
+}
+
+.yellow-border {
+
+  border: 3px solid var(--key-yellow)
+
+}
+
+@media only screen and (max-width: 550px) {
+
+  section {
+
+    font-size: 17px;
+
+  }
 
 }

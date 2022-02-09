@@ -16,9 +16,9 @@ const OptionBox = ({setCategoryFilter, setSortByQuery, setOrderQuery}) => {
 
     }
 
-    return(<fieldset>
+    return(<fieldset className='options-fieldset'>
         <legend>Options</legend>
-        <section hidden={hiddenOptions}>
+        <section hidden={hiddenOptions} className='options-box'>
             <CategoryDropDown setCategoryFilter={setCategoryFilter}/>
             <SortByDropDown setSortByQuery={setSortByQuery}/>
             <OrderDropDown setOrderQuery={setOrderQuery}/>
