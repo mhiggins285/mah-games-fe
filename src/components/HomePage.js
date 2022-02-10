@@ -11,7 +11,7 @@ const HomePage = (props) => {
 
     return(<section>
         <OptionBox setCategoryFilter={setCategoryFilter} setSortByQuery={setSortByQuery} setOrderQuery={setOrderQuery}/>
-        Select a review to read it.
+        <p className='background-text'>Select a review to read it.</p>
         <ReviewList categoryFilter={categoryFilter} sortByQuery={sortByQuery} orderQuery={orderQuery}/>        
     </section>)
 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Short+Stack&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Mono:wght@200&family=Short+Stack&display=swap');
 
 :root {
 
@@ -69,7 +70,7 @@
 
 section {
 
-  font-size: 20px;
+  font-size: 18px;
 
 }
 
@@ -81,14 +82,68 @@ button {
 
 .header {
 
-  margin: 0;
+  cursor: pointer;
+  background-color: var(--header-grey);
+  display: grid;
+  grid-template-columns: 80px auto 80px;
+  grid-template-areas: 
+  '. text logo';
+
+}
+
+.header-text {
+
+  grid-area: text;
   font-weight: 1000;
-  font-size: 2.3em;
+  margin: 0;
+  font-size: 3em;
   padding: 10px;
   letter-spacing: 0.2em;
   text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
-  cursor: pointer;
-  background-color: var(--header-grey);
+
+}
+
+.header-logo {
+
+  grid-area: logo;
+  height: 80px;
+  margin-top: 5px;
+
+}
+
+.background-text {
+
+  background-color: #ffffff7f;
+  width: fit-content;
+  margin: auto;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: -10px
+
+}
+
+.background-header {
+
+  background-color: #ffffff7f;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 5px;
+  padding: 8px;
+  border-radius: 10px;
+
+}
+
+.error-page {
+
+  display: block;
+  padding-top: 30px;
+
+}
+
+.error-page > img {
+
+  display: block;
+  margin: auto;
 
 }
 
@@ -104,6 +159,7 @@ button {
   border-radius: 4px;
   box-shadow: 6px 6px 20px var(--shadow-grey);
   margin-bottom: 25px;
+  margin-top: 15px;
 
 }
 
@@ -157,9 +213,27 @@ button {
 
 @media only screen and (max-width: 550px) {
 
-  section {
+  section, textarea {
 
-    font-size: 17px;
+    font-size: 15px;
+
+  }
+
+  .header {
+
+    display: block;
+
+  }
+
+  .header-text {
+
+    font-size: 2.3em;
+
+  }
+
+  .header-logo {
+
+    display: none;
 
   }
 

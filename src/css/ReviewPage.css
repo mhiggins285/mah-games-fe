@@ -32,12 +32,13 @@
 .review-text {
 
     grid-area: body;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 100;
     background-color: var(--hightlight-grey);
     width: 90%;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding: 8px;
     border-radius: 10px;
     text-align: left;
@@ -94,7 +95,6 @@
 .review-comment-count {
 
     grid-area: comment-count;
-
     font-weight: bold;
 
 }
@@ -221,13 +221,14 @@
 
 .comment-body {
 
-    grid-area: body;
-    font-family: Arial, Helvetica, sans-serif;
+    grid-area: body; 
+    font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 100;
     background-color: var(--hightlight-grey);
     width: 90%;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding: 8px;
     border-radius: 10px;
     text-align: left;

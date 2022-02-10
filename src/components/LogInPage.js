@@ -22,7 +22,7 @@ const LogInPage = (props) => {
 
     return (<section className='log-in-page'>
         <LogInForm setErrorDetails={setErrorDetails}/>
-        Not yet signed up?
+        <p className='background-text'>Not yet signed up?</p>
         <RegisterForm setErrorDetails={setErrorDetails}/>
         <ErrorMessage errorDetails={errorDetails}/>
     </section>)
