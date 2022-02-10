@@ -8,6 +8,7 @@ import '../../css/App.css'
 
 const ReviewList = ({categoryFilter, sortByQuery, orderQuery}) => {
 
+    const [isLoading, setIsLoading] = useState(true)
     const [reviewArray, setReviewArray] = useState([])
 
     useEffect(() => {
@@ -16,16 +17,19 @@ const ReviewList = ({categoryFilter, sortByQuery, orderQuery}) => {
             .then((reviews) => {
 
                 setReviewArray(reviews)
+                setIsLoading(false)
 
             })
 
     }, [categoryFilter, sortByQuery, orderQuery])
 
-    return(<ul className='review-list'>
-        {reviewArray.map((review, index) => {
-            return (<ReviewListItem key={review.review_id} review={review} borderColour={index % 4}/>)
-        })}
-    </ul>)
+    return(<section>
+            <h3 className='background-header' hidden={!isLoading}>Loading...</h3>
+            <ul className='review-list'>
+            {reviewArray.map((review, index) => {
+                return (<ReviewListItem key={review.review_id} review={review} borderColour={index % 4}/>)
+            })}</ul>
+        </section>)
 
 }
 

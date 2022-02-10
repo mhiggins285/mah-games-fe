@@ -2,7 +2,7 @@ import { patchReviewVotes } from '../../utils/api'
 
 import '../../css/App.css'
 
-const ReviewVoteButtons = ({setVoteChange, review_id}) => {
+const ReviewVoteButtons = ({setVoteChange, voteChange, review_id}) => {
 
     const handleLike = () => {
 
@@ -29,8 +29,8 @@ const ReviewVoteButtons = ({setVoteChange, review_id}) => {
     }
 
     return (<section className='like-dislike-button-container'>
-        <button onClick={handleLike} className='like-button'>Like</button>
-        <button onClick={handleDislike} className='dislike-button'>Dislike</button>
+        <button onClick={handleLike} className='like-button' disabled={voteChange === 1}>Like</button>
+        <button onClick={handleDislike} className='dislike-button' disabled={voteChange === -1}>Dislike</button>
     </section>)
 
 }

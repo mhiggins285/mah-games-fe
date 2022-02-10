@@ -150,6 +150,12 @@
 
 }
 
+.like-button:disabled {
+
+    background-color: var(--active-green);
+
+}
+
 .dislike-button {
 
     border: 1px solid var(--key-red);
@@ -161,6 +167,12 @@
 
     background-color: var(--active-red);
     
+}
+
+.dislike-button:disabled {
+
+    background-color: var(--active-red);
+
 }
 
 .comment-list {
