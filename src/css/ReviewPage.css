@@ -7,7 +7,7 @@
     padding: 20px;
     padding-top:10px;
     display: grid;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 33% auto;
     grid-template-rows: fit-content fit-content fit-content fit-content fit-content fit-content fit-content fit-content fit-content;
     grid-template-areas:
     'title title'
@@ -50,6 +50,7 @@
 
     grid-area: created-at-tag;
     font-weight: bold;
+    padding-right: 15px;
 
 }
 
@@ -63,12 +64,18 @@
 
     grid-area: category-tag;
     font-weight: bold;
+    padding-right: 15px;
 
 }
 
 .category-value {
 
     grid-area: category-value;
+    border: 1px solid var(--border-grey);
+    width: fit-content;
+    margin: auto auto;
+    padding: 3px 5px;
+    border-radius: 5px;
 
 }
 
@@ -76,6 +83,7 @@
 
     grid-area: designer-tag;
     font-weight: bold;
+    padding-right: 15px;
 
 }
 
@@ -89,6 +97,7 @@
 
     grid-area: votes;
     font-weight: bold;
+    padding-right: 15px;
 
 }
 
@@ -279,11 +288,11 @@
 
 .add-comment--disabled, .add-comment--enabled {
 
-    margin: 20px;
-    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-top: 10px;
     border: 1px solid var(--header-grey);
     padding: 8px;
-    width: 90%;
+    width: 80%;
     border-radius: 10px;
     display: inline-block;
 
@@ -327,8 +336,7 @@
 
 .add-comment-section {
 
-    padding: 20px;
-    padding-top: 0px;
+    padding: 0px 20px 35px 20px;
 
 }
 
@@ -381,11 +389,56 @@
     
     }
 
+    .review-body {
+
+        padding: 12px;
+
+    }
+
 }
 
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (min-width: 1150px) {
 
-    
+    .review-page {
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+        'review comments';
+        grid-auto-rows: min-content;
+
+    }
+
+    .widescreen-scrollable {
+
+        height: 100vh;
+        overflow-y: auto;
+
+    }
+
+    .review-grid {
+
+        grid-area: review;
+
+    }
+
+    .comments-grid {
+
+        grid-area: comments;
+
+    }
+
+    .add-comment-grid {
+
+        grid-area: comments;
+
+    }
+
+    .error-grid {
+
+        grid-area: comments;
+
+    }
 
 }

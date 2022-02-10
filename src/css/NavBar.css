@@ -2,11 +2,11 @@
 
     margin: 0;
     padding: 10px;
-    background-color: var(--border-grey);
+    background-color: var(--nav-purple);
     display: flex;
     justify-content: space-evenly;
-    border-top: 2px solid var(--box-grey);
-    border-bottom: 3px solid var(--shadow-grey);
+    border-top: 2px solid var(--highlight-purple);
+    border-bottom: 3px solid var(--border-purple);
   
 }
 

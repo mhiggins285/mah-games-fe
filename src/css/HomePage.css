@@ -28,6 +28,15 @@
 
 }
 
+.options-fieldset > button {
+
+    padding: 4px 12px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    height: 3em;
+
+}
+
 .review-list {
 
     margin: 0;

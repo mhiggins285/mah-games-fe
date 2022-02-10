@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 
 import { CurrentUserContext } from '../contexts/CurrentUserContext'
 
@@ -8,7 +8,7 @@ import ErrorMessage from "./re-used/ErrorMessage"
 
 import '../css/App.css'
 
-const LogInPage = (props) => {
+const LogInPage = () => {
 
     const { currentUser } = useContext(CurrentUserContext)
 

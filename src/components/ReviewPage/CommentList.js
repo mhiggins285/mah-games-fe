@@ -4,6 +4,8 @@ import { getCommentsByReview } from '../../utils/api'
 
 import CommentListItem from './CommentListItem'
 
+import '../../css/App.css'
+
 const CommentList = ({commentsArray, setCommentsArray, review_id, setCommentChange}) => {
 
     useEffect(() => {

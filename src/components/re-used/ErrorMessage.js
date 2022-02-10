@@ -1,8 +1,10 @@
+import '../../css/App.css'
+
 const ErrorMessage = ({errorDetails}) => {
 
     if (errorDetails.message) {
 
-        return(<section className='error-message'>{errorDetails.message}</section>)
+        return(<p className='error-message'>{errorDetails.message}</p>)
 
     } else {
 

@@ -7,8 +7,6 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
 import '../../css/App.css'
 
-import '../../css/LogInPage.css'
-
 const RegisterForm = ({setErrorDetails}) => {
 
     const { setCurrentUser } = useContext(CurrentUserContext)

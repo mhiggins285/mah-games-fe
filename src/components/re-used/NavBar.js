@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
-import '../../css/NavBar.css'
+import '../../css/App.css'
 
-const NavBar = (props) => {
+const NavBar = () => {
 
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
 
@@ -17,20 +17,20 @@ const NavBar = (props) => {
 
     if (currentUser) {
 
-        return (<ul className='nav-bar--logged-in'>
+        return (<nav className='nav-bar--logged-in'>
             <div>
             <li><Link to="/">Home</Link></li>
             <li><button type='button' onClick={logOut}>Log Out</button></li>
             </div>
             <li>user: {currentUser}</li>
-        </ul>)
+        </nav>)
 
     }
 
-    return (<ul className='nav-bar'>
+    return (<nav className='nav-bar'>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/log-in">Log In</Link></li>
-    </ul>)
+    </nav>)
 
 }
 

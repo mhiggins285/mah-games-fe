@@ -6,11 +6,15 @@ import { formatDate } from '../../utils/format'
 
 import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
+import defaultAvatar from '../../images/neutral-grey.png'
+
+import '../../css/App.css'
+
 const CommentListItem = ({ comment, setCommentsArray, setCommentChange, borderColour }) => {
 
     const { currentUser } = useContext(CurrentUserContext);
 
-    const [ authorAvatar, setAuthorAvatar] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png')
+    const [ authorAvatar, setAuthorAvatar] = useState(defaultAvatar)
 
     const { comment_id, author, votes, created_at, body } = comment
 

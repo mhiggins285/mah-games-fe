@@ -1,3 +1,9 @@
+@import "./NavBar.css";
+@import "./HomePage.css";
+@import "./LogInPage.css";
+@import "./ReviewPage.css";
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Short+Stack&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Mono:wght@200&family=Short+Stack&display=swap');
 
@@ -14,14 +20,19 @@
   --box-hover: #ddd7df;
   --background-hover: #cdc7cf;
 
-  /* --hightlight-active: #dfd7df; */
+  --hightlight-active: #dfd7df;
   --box-active: #cdc7cf;
   --background-active: #bdb7bf;
+  
+  --header-purple: #b599e7;
+  --highlight-purple: #c9c9f5;
+  --nav-purple: #816bbb;
+  --border-purple: #4a1fb7;
 
-  --key-blue: #0b2fe5;
-  --key-green: #00d771;
-  --key-red: #ff0018;
-  --key-yellow: #e6b924;
+  --key-blue: #4f78fe;
+  --key-green: #57e5a4;
+  --key-red: #ff5739;
+  --key-yellow: #eed271;
 
   --active-green: #a0ffe1;
   --active-red: #ffa0b8;
@@ -83,7 +94,7 @@ button {
 .header {
 
   cursor: pointer;
-  background-color: var(--header-grey);
+  background-color: var(--header-purple);
   display: grid;
   grid-template-columns: 80px auto 80px;
   grid-template-areas: 
@@ -127,6 +138,7 @@ button {
   background-color: #ffffff7f;
   width: fit-content;
   margin: auto;
+  margin-top: 20px;
   margin-bottom: 5px;
   padding: 8px;
   border-radius: 10px;

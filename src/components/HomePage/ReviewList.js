@@ -4,6 +4,8 @@ import { getReviewsByCategory } from '../../utils/api'
 
 import ReviewListItem from "./ReviewListItem"
 
+import '../../css/App.css'
+
 const ReviewList = ({categoryFilter, sortByQuery, orderQuery}) => {
 
     const [reviewArray, setReviewArray] = useState([])

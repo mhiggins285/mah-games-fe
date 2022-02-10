@@ -6,13 +6,15 @@ import { getUserAvatar } from '../../utils/api'
 
 import { formatDate, formatCategoryName } from '../../utils/format'
 
-import '../../css/HomePage.css'
+import defaultAvatar from '../../images/neutral-grey.png'
+
+import '../../css/App.css'
 
 const ReviewListItem = ({review, borderColour}) => {
 
     const navigate = useNavigate()
 
-    const [ownerAvatar, setOwnerAvatar] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png')
+    const [ownerAvatar, setOwnerAvatar] = useState(defaultAvatar)
 
     const {review_id, title, owner, review_img_url, category, created_at, votes, comment_count} = review
 

@@ -4,6 +4,8 @@ import { postComment } from '../../utils/api'
 
 import { CurrentUserContext } from '../../contexts/CurrentUserContext'
 
+import '../../css/App.css'
+
 const AddComment = ({setCommentsArray, setErrorDetails, review_id, setCommentChange}) => {
 
     const { currentUser } = useContext(CurrentUserContext);

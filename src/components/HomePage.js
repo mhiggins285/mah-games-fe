@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import OptionBox from './HomePage/OptionBox'
 import ReviewList from './HomePage/ReviewList'
 
-const HomePage = (props) => {
+import '../css/App.css'
+
+const HomePage = () => {
 
     const [categoryFilter, setCategoryFilter] = useState()
     const [sortByQuery, setSortByQuery] = useState()

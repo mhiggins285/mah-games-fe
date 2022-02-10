@@ -1,5 +1,7 @@
 import { patchReviewVotes } from '../../utils/api'
 
+import '../../css/App.css'
+
 const ReviewVoteButtons = ({setVoteChange, review_id}) => {
 
     const handleLike = () => {

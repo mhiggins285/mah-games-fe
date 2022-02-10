@@ -6,9 +6,11 @@ import { getReview, getUserAvatar } from '../../utils/api'
 
 import { formatDate, formatCategoryName } from '../../utils/format'
 
+import defaultAvatar from '../../images/neutral-grey.png'
+
 import ReviewVoteButtons from "./ReviewVoteButtons"
 
-import '../../css/ReviewPage.css'
+import '../../css/App.css'
 
 const ReviewDetails = ({review_id, commentChange}) => {
 
@@ -16,7 +18,7 @@ const ReviewDetails = ({review_id, commentChange}) => {
 
     const [review, setReview] = useState({})
     const [voteChange, setVoteChange] = useState(0)
-    const [ownerAvatar, setOwnerAvatar] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png')
+    const [ownerAvatar, setOwnerAvatar] = useState(defaultAvatar)
 
     useEffect(() => {
 
