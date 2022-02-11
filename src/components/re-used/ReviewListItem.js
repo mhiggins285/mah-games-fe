@@ -1,22 +1,35 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
-import { getUserAvatar } from '../../utils/api'
+import { getUserAvatar, deleteReview } from '../../utils/api'
 
 import { formatDate, formatCategoryName } from '../../utils/format'
 
+import { CurrentUserContext } from '../../contexts/CurrentUserContext'
+
 import defaultAvatar from '../../images/neutral-grey.png'
+import defaultReviewImage from '../../images/logo-transparent-background.png'
 
 import '../../css/App.css'
 
-const ReviewListItem = ({review, borderColour, setCategoryFilter}) => {
+const ReviewListItem = ({review, borderColour, setCategoryFilter, setReviewArray}) => {
 
     const navigate = useNavigate()
 
+    const { currentUser } = useContext(CurrentUserContext)
+
     const [ownerAvatar, setOwnerAvatar] = useState(defaultAvatar)
 
-    const {review_id, title, owner, review_img_url, category, created_at, votes, comment_count} = review
+    const {review_id, title, owner, category, created_at, votes, comment_count} = review
+
+    let { review_img_url } = review
+
+    if (!review_img_url) {
+
+        review_img_url = defaultReviewImage
+
+    }
 
     const handleReviewClick = () => {
 
@@ -37,6 +50,28 @@ const ReviewListItem = ({review, borderColour, setCategoryFilter}) => {
         event.stopPropagation()
 
         navigate(`/users/${review.owner}`)
+
+    }
+
+    const handleDeleteReview = (event) => {
+
+        event.stopPropagation()
+
+        deleteReview(review_id)
+            .then(() => {
+
+                setReviewArray((oldReviewArray) => {
+
+                    const newReviewArray = oldReviewArray.filter((review) => {
+                        return review.review_id !== review_id
+                    })
+
+                    return newReviewArray
+
+                })
+
+            })
+
 
     }
     
@@ -97,6 +132,7 @@ const ReviewListItem = ({review, borderColour, setCategoryFilter}) => {
             <p className='review-details'>{comment_count} comments</p>
         </section>
         {formatDate(created_at)}
+        <button onClick={(event) => handleDeleteReview(event)} hidden={!(owner === currentUser)} className='delete-review-button'>Delete Review</button>
     </li>)
 
 }

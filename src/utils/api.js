@@ -8,7 +8,7 @@ export const getReviewsByCategory = (category, sortByQuery = 'created_at', order
 
     let endpoint = `/reviews?sort_by=${sortByQuery}&order=${orderQuery}`
 
-    if (category && category !== 'No Filter') {
+    if (category && category !== 'No Filter' && category !== '') {
 
         endpoint += `&category=${category}`
 
@@ -36,6 +36,26 @@ export const patchReviewVotes = (review_id, inc_votes) => {
     const patchObject = { inc_votes }
 
     return mahGamesAPI.patch(`/reviews/${review_id}/votes`, patchObject)
+
+}
+
+export const postReview = (title, designer, category, review_body, owner) => {
+
+    const postObject = {
+        title,
+        designer,
+        category,
+        review_body,
+        owner
+    }
+
+    return mahGamesAPI.post(`/reviews`, postObject)
+
+}
+
+export const deleteReview = (review_id) => {
+
+    return mahGamesAPI.delete(`reviews/${review_id}`)
 
 }
 

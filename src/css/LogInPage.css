@@ -26,6 +26,15 @@
 
   min-width: 0px;
   padding-left: 5px;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+
+}
+
+.log-in-box > form > label > select {
+
+  min-width: 0px;
+  padding-left: 5px;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 
 }
 
@@ -45,3 +54,41 @@
 
 }
 
+
+@media only screen and (min-width: 1150px) {
+
+  .log-in-box {
+
+    width: 1090px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  
+  }
+
+}
+
+.write-review-body {
+
+  min-width: 0px;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  width: 95%;
+  height: 8em;
+  vertical-align: text-top;
+  resize: none;
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid var(--header-grey);
+  padding: 8px;
+  border-radius: 10px;
+
+}
+
+.write-review-body-tag {
+
+  margin-top: 15px;
+
+}

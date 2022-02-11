@@ -16,7 +16,7 @@ const LogInPage = () => {
 
     if (currentUser) {
 
-        return (<h3>You are currently logged in. If you would like to log in as another user, please first log out.</h3>)
+        return (<h3 className='background-header'>You are currently logged in. If you would like to log in as another user, please first log out.</h3>)
 
     }
 

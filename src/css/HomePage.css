@@ -59,11 +59,12 @@
     margin: 30px 30px 60px 30px;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: fit-content fit-content fit-content;
+    grid-template-rows: fit-content fit-content fit-content fit-content;
     grid-template-areas: 
     'title title'
     'image details'
-    'timestamp timestamp';
+    'timestamp timestamp'
+    '. delete';
     cursor: pointer;
 
 }
@@ -194,6 +195,38 @@
 
 }
 
+.delete-review-button {
+
+    grid-area: delete;
+    padding: 5px 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    height: 3em;
+    background-color: var(--background-grey);
+    border: 1px solid var(--border-grey);
+    color: var(--shadow-grey);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    margin-left: auto;
+
+} 
+
+.delete-review-button:hover {
+
+    background-color: var(--background-hover);
+
+}
+
+.delete-review-button:active {
+
+    color: var(--key-red);
+    background-color: var(--active-red);
+    border: 1px solid var(--key-red);
+
+}
+
 @media only screen and (max-width: 550px) {
     
     .review-box {
@@ -207,7 +240,8 @@
         'image'
         'user'
         'details'
-        'timestamp';
+        'timestamp'
+        'delete';
 
     }
 

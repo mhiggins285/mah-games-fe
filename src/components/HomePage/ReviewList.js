@@ -29,7 +29,7 @@ const ReviewList = ({categoryFilter, sortByQuery, orderQuery, setCategoryFilter}
             <h3 className='background-header' hidden={!isLoading}>Loading...</h3>
             <ul className='review-list'>
             {reviewArray.map((review, index) => {
-                return (<ReviewListItem key={review.review_id} review={review} borderColour={index % 4} setCategoryFilter={setCategoryFilter}/>)
+                return (<ReviewListItem key={review.review_id} review={review} borderColour={index % 4} setCategoryFilter={setCategoryFilter} setReviewArray={setReviewArray}/>)
             })}</ul>
         </section>)
 

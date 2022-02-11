@@ -32,7 +32,7 @@ const CategoryDropDown = ({setCategoryFilter, isReviewOptions}) => {
     return (
         <label hidden={!isReviewOptions}>Category
           <select onChange={categoryChangeHandler}>
-            <option defaultValue value={undefined}>No Filter</option>
+            <option defaultValue value={undefined}></option>
             {categories.map((category) => <option key={category} value={category}>{formatCategoryName(category)}</option>)}
           </select>
         </label>

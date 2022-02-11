@@ -7,6 +7,7 @@ import { getReview, getUserAvatar } from '../../utils/api'
 import { formatDate, formatCategoryName } from '../../utils/format'
 
 import defaultAvatar from '../../images/neutral-grey.png'
+import defaultReviewImage from '../../images/logo-transparent-background.png'
 
 import ReviewVoteButtons from "./ReviewVoteButtons"
 
@@ -57,7 +58,15 @@ const ReviewDetails = ({review_id, commentChange}) => {
 
     }, [review_id])
 
-    const { title, owner, review_img_url, category, created_at, votes, comment_count, designer, review_body } = review
+    const { title, owner, category, created_at, votes, comment_count, designer, review_body } = review
+
+    let { review_img_url } = review
+
+    if (!review_img_url) {
+
+        review_img_url = defaultReviewImage
+
+    }
 
     if (isLoading) {
 

@@ -28,6 +28,7 @@ const NavBar = () => {
         return (<nav className='nav-bar--logged-in'>
             <div>
             <li><Link to="/">Home</Link></li>
+            <li><Link to="/write-review">Write Review</Link></li>
             <li><Link to="/users">Users</Link></li>
             <li><button type='button' onClick={logOut}>Log Out</button></li>
             </div>
@@ -38,7 +39,7 @@ const NavBar = () => {
 
     return (<nav className='nav-bar'>
         <li><Link to="/">Home</Link></li>
-            <li><Link to="/users">Users</Link></li>
+        <li><Link to="/users">Users</Link></li>
         <li><Link to="/log-in">Log In</Link></li>
     </nav>)
 
