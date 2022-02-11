@@ -1,10 +1,14 @@
 import { useState, useContext, useEffect } from 'react'
 
+import { useNavigate } from 'react-router-dom'
+
 import { deleteComment, getUserAvatar } from '../../utils/api'
 
 import { formatDate } from '../../utils/format'
 
 import { CurrentUserContext } from '../../contexts/CurrentUserContext'
+
+import CommentVoteButtons from './CommentVoteButtons'
 
 import defaultAvatar from '../../images/neutral-grey.png'
 
@@ -12,9 +16,12 @@ import '../../css/App.css'
 
 const CommentListItem = ({ comment, setCommentsArray, setCommentChange, borderColour }) => {
 
+    const navigate = useNavigate()
+
     const { currentUser } = useContext(CurrentUserContext);
 
-    const [ authorAvatar, setAuthorAvatar] = useState(defaultAvatar)
+    const [ authorAvatar, setAuthorAvatar ] = useState(defaultAvatar)
+    const [ voteChange, setVoteChange ] = useState(0)
 
     const { comment_id, author, votes, created_at, body } = comment
 
@@ -28,6 +35,7 @@ const CommentListItem = ({ comment, setCommentsArray, setCommentChange, borderCo
                     const newCommentsArray = oldCommentsArray.filter((comment) => {
                         return comment.comment_id !== comment_id
                     })
+
                     return newCommentsArray
 
                 })
@@ -39,6 +47,12 @@ const CommentListItem = ({ comment, setCommentsArray, setCommentChange, borderCo
                 })
 
             })
+
+    }
+
+    const handleUserClick = () => {
+
+        navigate(`/users/${comment.author}`)
 
     }
 
@@ -76,24 +90,24 @@ const CommentListItem = ({ comment, setCommentsArray, setCommentChange, borderCo
 
     }
 
-    let deleteButton = ''
+    let buttons = <CommentVoteButtons setVoteChange={setVoteChange} voteChange={voteChange} comment_id={comment_id}/>
 
     if (currentUser === author) {
 
-        deleteButton = <button onClick={handleDeleteComment} className='delete-comment-button'>Delete Comment</button>
+        buttons = <button onClick={handleDeleteComment} className='delete-comment-button'>Delete Comment</button>
 
-    }
+    } 
 
     return(<section className={`review-comment ${borderStyle}`}>
-        <section className={`comment-author ${borderStyle}`}>
+        <section className={`comment-author ${borderStyle}`} onClick={handleUserClick}>
             <img alt={`${author}'s avatar`} src={authorAvatar}/>
             <p>{author}</p>
         </section>
         <p className='comment-body'>{body}</p>
         <p className='comment-timestamp'>{}</p>
-        <p className='comment-votes'>{votes} votes</p>
+        <p className='comment-votes'>{votes + voteChange} votes</p>
         {formatDate(created_at)}
-        <div className='delete-comment-button-container'>{deleteButton}</div>
+        <div className='comment-button-container'>{buttons}</div>
     </section>)
 
 }

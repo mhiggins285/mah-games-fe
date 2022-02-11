@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import ErrorMessage from "./re-used/ErrorMessage"
-import AddComment from "./ReviewPage/AddComment"
-import CommentList from "./ReviewPage/CommentList"
 import ReviewDetails from "./ReviewPage/ReviewDetails"
+import CommentList from "./ReviewPage/CommentList"
+import AddComment from "./ReviewPage/AddComment"
+import ErrorMessage from "./re-used/ErrorMessage"
 
 import '../css/App.css'
 

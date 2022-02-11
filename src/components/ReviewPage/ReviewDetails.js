@@ -21,6 +21,12 @@ const ReviewDetails = ({review_id, commentChange}) => {
     const [voteChange, setVoteChange] = useState(0)
     const [ownerAvatar, setOwnerAvatar] = useState(defaultAvatar)
 
+    const handleUserClick = () => {
+
+        navigate(`/users/${review.owner}`)
+
+    }
+
     useEffect(() => {
 
         setIsLoading(true)
@@ -64,7 +70,7 @@ const ReviewDetails = ({review_id, commentChange}) => {
     return(<section className='review-body blue-border'>
         <h2 className='review-title'>{title}</h2>
         <img alt={`${title} - review`} src={review_img_url} className='review-image'/>
-        <section className={`review-owner blue-border`}>
+        <section className={`review-owner blue-border`} onClick={handleUserClick}>
             <p>{owner}</p>
             <img alt={`${owner}'s avatar`} src={ownerAvatar}/>
         </section>

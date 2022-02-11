@@ -8,7 +8,7 @@ export const getReviewsByCategory = (category, sortByQuery = 'created_at', order
 
     let endpoint = `/reviews?sort_by=${sortByQuery}&order=${orderQuery}`
 
-    if (category) {
+    if (category && category !== 'No Filter') {
 
         endpoint += `&category=${category}`
 
@@ -66,6 +66,14 @@ export const deleteComment = (comment_id) => {
 
 }
 
+export const patchCommentVotes = (comment_id, inc_votes) => {
+
+    const patchObject = { inc_votes }
+
+    return mahGamesAPI.patch(`/comments/${comment_id}/votes`, patchObject)
+
+}
+
 
 /*** Categories */
 
@@ -86,6 +94,44 @@ export const getUsernames = () => {
             const usernames = users.map((user) => {return user.username})
             return usernames
         })
+
+}
+
+export const getUsers = () => {
+
+    return mahGamesAPI.get('/users')
+        .then((res) => {
+
+            const users = res.data.users
+
+            const userPromises = []
+
+            users.forEach((user, index) => {
+
+                userPromises[index] = mahGamesAPI.get(`/users/${user.username}`)
+                    .then((res) => {
+
+                        return res.data.user
+
+                    })
+
+            })
+
+            return Promise.all(userPromises)
+
+        })
+        .then((detailedUsers) => {
+
+            return detailedUsers
+
+        })
+    
+}
+
+export const getUser = (username) => {
+
+    return mahGamesAPI.get(`/users/${username}`)
+        .then((res) => res.data.user)
 
 }
 

@@ -4,7 +4,7 @@ import { getCategories } from '../../utils/api'
 
 import { formatCategoryName } from '../../utils/format'
 
-const CategoryDropDown = ({setCategoryFilter}) => {
+const CategoryDropDown = ({setCategoryFilter, isReviewOptions}) => {
 
     const [categories, setCategories] = useState([])
 
@@ -30,7 +30,7 @@ const CategoryDropDown = ({setCategoryFilter}) => {
     }, [])
 
     return (
-        <label>Category
+        <label hidden={!isReviewOptions}>Category
           <select onChange={categoryChangeHandler}>
             <option defaultValue value={undefined}>No Filter</option>
             {categories.map((category) => <option key={category} value={category}>{formatCategoryName(category)}</option>)}

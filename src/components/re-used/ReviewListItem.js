@@ -10,7 +10,7 @@ import defaultAvatar from '../../images/neutral-grey.png'
 
 import '../../css/App.css'
 
-const ReviewListItem = ({review, borderColour}) => {
+const ReviewListItem = ({review, borderColour, setCategoryFilter}) => {
 
     const navigate = useNavigate()
 
@@ -21,6 +21,22 @@ const ReviewListItem = ({review, borderColour}) => {
     const handleReviewClick = () => {
 
         navigate(`/reviews/${review_id}`)
+
+    }
+
+    const handleCategoryClick = (event) => {
+
+        event.stopPropagation()
+
+        setCategoryFilter(category)
+
+    }
+
+    const handleUserClick = (event) => {
+
+        event.stopPropagation()
+
+        navigate(`/users/${review.owner}`)
 
     }
     
@@ -58,15 +74,25 @@ const ReviewListItem = ({review, borderColour}) => {
 
     }
 
+    const isHomePageItem = !!setCategoryFilter
+
+    let categoryLine = <p className='review-details review-category' onClick={(event) => handleCategoryClick(event)}>{formatCategoryName(category)}</p>
+
+    if (!isHomePageItem) {
+
+        categoryLine = <p className='review-details review-category--user-page'>{formatCategoryName(category)}</p>
+
+    }
+
     return(<li className={`review-box ${borderStyle}`} onClick={handleReviewClick}>
         <h2 className='review-title'>{title}</h2>
         <img alt={`${title} - review`} src={review_img_url} className='review-image'/>
         <section className='review-details'>
-            <section className={`review-owner ${borderStyle}`}>
+            <section className={`review-owner ${borderStyle}`} onClick={(event) => handleUserClick(event)}>
                 <p>{owner}</p>
                 <img alt={`${ownerAvatar}'s avatar`} src={ownerAvatar}/>
             </section>
-            <p className='review-details review-category'>{formatCategoryName(category)}</p>
+            {categoryLine}
             <p className='review-details'>{votes} votes</p>
             <p className='review-details'>{comment_count} comments</p>
         </section>

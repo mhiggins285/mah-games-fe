@@ -58,7 +58,7 @@ const AddComment = ({setCommentsArray, setErrorDetails, review_id, setCommentCha
     return (<section className='add-comment-section'>
         <h3 className='background-header'>Post Comment</h3>
         <form className={currentUser ? 'add-comment--enabled' : 'add-comment--disabled'} onSubmit={(event) => handlePostComment(event)}>
-            <textarea cols='50' type='text' value={commentBody} disabled={!currentUser} placeholder={currentUser ? 'Write comment...' : 'Please log in to post comment'} onChange={handleCommentChange}/>
+            <textarea cols='50' type='text' value={commentBody} disabled={!currentUser} placeholder={currentUser ? 'Write comment...' : 'Please log in to post a comment'} onChange={handleCommentChange}/>
             <button disabled={!currentUser}>Submit</button>
         </form>
     </section>)

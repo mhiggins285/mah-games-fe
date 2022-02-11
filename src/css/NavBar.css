@@ -26,7 +26,7 @@ a {
     padding: 4px 6px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px inset, rgba(0, 0, 0, 0.1) 0px -5px 5px 0px inset, rgba(0, 0, 0, 0.12) 0px -5px 5px 0px inset;
-    font-family: Arial;
+    font-family:  'Roboto Mono', monospace;
     height: 18px;
     line-height: 22px;
 
@@ -54,20 +54,21 @@ a:active {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px inset, rgba(0, 0, 0, 0.1) 0px -5px 5px 0px inset, rgba(0, 0, 0, 0.12) 0px -5px 5px 0px inset;
     border: 0;
     font-size: 12px;
-    height: 22px;
+    height: 23px;
     line-height: 15px;
+    font-family: 'Roboto Mono', monospace;
 
 }
 
 .nav-bar--logged-in button:hover {
 
-    background-color: var(--header-grey);
+    background-color: var(--background-hover);
 
 }
 
 .nav-bar--logged-in button:active {
 
-    background-color: var(--border-grey);
+    background-color: var(--background-active);
 
 }
 
@@ -82,9 +83,13 @@ a:active {
 
     margin: 0;
     padding: 10px;
-    background-color: var(--border-grey);
+    background-color: var(--nav-purple);
     display: grid;
-    grid-template-columns: auto 150px;
+    grid-template-columns: auto min-content;
+    grid-template-areas:
+    'menu user';
+    border-top: 2px solid var(--highlight-purple);
+    border-bottom: 3px solid var(--border-purple);
 
 }
 
@@ -92,6 +97,7 @@ a:active {
 
     display: flex;
     justify-content: space-evenly;
+    grid-area: menu;
 
 }
 
@@ -100,5 +106,27 @@ a:active {
     display: inline;
     white-space: nowrap;
     font-size:12px;
+
+}
+
+.current-user {
+
+    background-color: var(--highlight-purple);
+    opacity: 0.72;
+    border-radius: 5px;
+    padding: 2px 6px;
+    grid-area: user;
+
+}
+
+.current-user:hover {
+
+    background-color: var(--hover-purple);
+
+}
+
+.current-user:active {
+
+    background-color: var(--header-purple);
 
 }

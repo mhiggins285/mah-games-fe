@@ -44,9 +44,9 @@ const RegisterForm = ({setErrorDetails}) => {
 
             setErrorDetails({message: 'Please enter username'})
 
-        } else if (registerInput.username.length > 25) {
+        } else if (registerInput.username.length > 17) {
 
-            setErrorDetails({message: 'Username too long, max length: 25'})
+            setErrorDetails({message: 'Username too long, max length: 17'})
 
         } else if (registerInput.name.length > 50) {
 

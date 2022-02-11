@@ -34,7 +34,7 @@
     grid-area: body;
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 100;
-    background-color: var(--hightlight-grey);
+    background-color: var(--highlight-grey);
     width: 90%;
     margin: auto;
     margin-top: 10px;
@@ -127,13 +127,13 @@
     height: 3em;
     cursor: pointer;
     border-radius: 3px;
-    background-color: var(--hightlight-grey);
+    background-color: var(--highlight-grey);
 
 }
 
 .like-button:hover, .dislike-button:hover {
 
-    background-color: var(--hightlight-hover);
+    background-color: var(--highlight-hover);
 
 }
 
@@ -203,13 +203,25 @@
 
     grid-area: author;
     margin: 0;
-    background-color: var(--hightlight-grey);
+    background-color: var(--highlight-grey);
     height: 50px;
     position: relative;
     border-radius: 30px;
     margin: 10px;
     font-size: 16px;
     border-width: 2px;
+
+}
+
+.comment-author:hover {
+
+    background-color: var(--highlight-hover);
+
+}
+
+.comment-author:active {
+
+    background-color: var(--highlight-active);
 
 }
 
@@ -245,7 +257,7 @@
     grid-area: body; 
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 100;
-    background-color: var(--hightlight-grey);
+    background-color: var(--highlight-grey);
     width: 90%;
     margin: auto;
     margin-top: 10px;
@@ -262,7 +274,7 @@
 
 }
 
-.delete-comment-button-container {
+.comment-button-container {
 
     grid-area: delete;
     text-align: right;

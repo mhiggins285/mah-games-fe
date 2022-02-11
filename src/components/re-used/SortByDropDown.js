@@ -1,4 +1,4 @@
-const SortByDropDown = ({setSortByQuery}) => {
+const SortByDropDown = ({setSortByQuery, isReviewOptions}) => {
 
     const sortByChangeHandler = function(event) {
 
@@ -11,7 +11,7 @@ const SortByDropDown = ({setSortByQuery}) => {
         <select onChange={sortByChangeHandler}>
           <option defaultValue key='created_at' value='created_at'>Date Created</option>
           <option key='votes' value='votes'>Number of Votes</option>
-          <option key='comment_count' value='comment_count'>Number of Comments</option>
+          <option key='comment_count' value='comment_count' hidden={!isReviewOptions}>Number of Comments</option>
         </select>
       </label>
     )
