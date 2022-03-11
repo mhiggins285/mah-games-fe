@@ -4,7 +4,7 @@
 
 An online hosted version of this project can be found at:
 
-https://mah-games.netlify.app/api
+https://mah-games.netlify.app
 
 The github repository for the back-end of this project can be found at:
 
@@ -12,7 +12,7 @@ https://github.com/mhiggins285/mah-games-fe
 
 An online hosted version of the back-end of this project can be found at:
 
-https://mah-games.herokuapp.com/
+https://mah-games.herokuapp.com/api
 
 ## About
 
